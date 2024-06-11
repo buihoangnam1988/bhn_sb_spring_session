@@ -5,6 +5,12 @@
 * Tips:
   * Update Maven project `mvn clean install -U` 
   * redis-cli: `docker exec -it redis-session-redis-1 redis-cli`
+* Environment:
+  * Java 17
+  * Windows 10
+  * Visual Studio Code v1.90.0
+  * Docker Desktop for Windows v4.21.1
+  * No WSL required/No IntelliJ IDEA required
 ## Step by step
 ### Step 1: Temporarily disable Redis
 You will see Spring Security default login page (http://localhost:8080/login)
