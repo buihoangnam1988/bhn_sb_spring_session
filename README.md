@@ -11,3 +11,13 @@ You will see Spring Security default login page (http://localhost:8080/login)
 * Get the generated security password from log: ![](.md/img/s2.gen.pwd.png)
 * Login with `user/<generated_password>` ![](.md/img/s2.gen.pwd.login.png)
 * See the home page ![](.md/img/s2.logged.in.png)
+
+Further discussion:
+* After logged in, we get a JSESSIONID in Cookies ![](.md/img/s2.jsid.cookie.png)
+* This session is not deleted when you access /logout + confirm, it changes to another value instead
+* This session will change if you access /login and log in again
+
+Problem:
+* If you restart the server, the new server does not know your session id
+* If you scale up the system, add more server and connect to them through load balancer, the randomly new server does not know your session id
+* This is where Spring Session comes in
